@@ -1,0 +1,27 @@
+.status-container {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Roboto';
+
+  .status-column {
+    display: flex;
+    flex-direction: column;
+
+    ::ng-deep mat-card {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 10px;
+      cursor: pointer;
+      padding: 10px;
+
+      .name, .status {
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

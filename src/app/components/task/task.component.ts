@@ -11,6 +11,7 @@ import {StatusPipe} from "../../pipes/status.pipe";
 import {User} from "../../models/user";
 import {CrudService} from "../../api/crud.service";
 import {take} from "rxjs";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-task',
@@ -24,6 +25,7 @@ import {take} from "rxjs";
     MatSelect,
     MatOption,
     StatusPipe,
+    NgIf,
   ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss'

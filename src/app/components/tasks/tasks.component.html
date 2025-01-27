@@ -2,4 +2,16 @@
     <button (click)="onAddTask()" mat-raised-button >Add Task</button>
 </div>
 
-
+<div class="status-container">
+    <div *ngFor="let status of OngoingStatuses" class="status-column">
+        <span [appStatusColor]="status">{{status | status}}</span>
+        <mat-card *ngFor="let task of this.statusToTaskMap[status]" (click)="onTaskClick(task.id)">
+            <div class="name">
+                Name: <span>{{task.name}}</span>
+            </div>
+            <div class="status">
+                Status: <span [appStatusColor]="status">{{task.status | status}}</span>
+            </div>
+        </mat-card>
+    </div>
+</div>

@@ -11,6 +11,7 @@ import {
 import {Task} from "../../models/task";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DatePipe} from "@angular/common";
+import {StatusColorDirective} from "../../directives/status-color.directive";
 
 @Component({
   selector: 'app-backlog',
@@ -26,7 +27,8 @@ import {DatePipe} from "@angular/common";
     MatRowDef,
     MatTable,
     MatHeaderCellDef,
-    DatePipe
+    DatePipe,
+    StatusColorDirective
   ],
   templateUrl: './backlog.component.html',
   styleUrl: './backlog.component.scss'

@@ -13,5 +13,7 @@ import {MatIcon} from "@angular/material/icon";
 export class HeaderComponent {
   @Output() menuClicked = new EventEmitter();
 
-
+  onClick(): void {
+    this.menuClicked.emit();
+  }
 }

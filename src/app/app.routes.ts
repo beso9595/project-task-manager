@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {TasksComponent} from "./components/tasks/tasks.component";
 import {BacklogComponent} from "./components/backlog/backlog.component";
 import {UsersComponent} from "./components/users/users.component";
@@ -10,8 +9,7 @@ import {taskResolver} from "./resolvers/task.resolver";
 import {usersResolver} from "./resolvers/users.resolver";
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: DashboardComponent },
+    { path: '', redirectTo: 'tasks', pathMatch: 'full' },
     {
         path: 'task',
         component: TaskComponent,
@@ -29,5 +27,5 @@ export const routes: Routes = [
     },
     { path: 'backlog', component: BacklogComponent, resolve: { backlogs: backlogsResolver } },
     { path: 'users', component: UsersComponent, resolve: { users: usersResolver } },
-    { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
+    { path: '**', redirectTo: 'tasks', pathMatch: 'full' },
 ];
