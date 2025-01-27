@@ -30,15 +30,15 @@ export class AppComponent implements OnInit {
     // TODO for some reason not triggered
     this.stateStore.select(selectIsExpanded).subscribe((state: boolean) => {
       console.log(state);
-      if (state) {
-        setTimeout(() => {
-          this.drawer.nativeElement.open();
-        }, 0);
-      } else {
-        setTimeout(() => {
-          this.drawer.nativeElement.close();
-        }, 0);
-      }
+      // if (state) {
+      //   setTimeout(() => {
+      //     this.drawer.nativeElement.open();
+      //   }, 0);
+      // } else {
+      //   setTimeout(() => {
+      //     this.drawer.nativeElement.close();
+      //   }, 0);
+      // }
     });
     this.restoreState();
   }
