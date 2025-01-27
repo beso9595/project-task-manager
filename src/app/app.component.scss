@@ -1,0 +1,41 @@
+
+.content-container {
+  height: 100vh !important;
+
+  .sidenav {
+    width: 250px;
+
+    .list {
+      display: flex;
+      flex-direction: column;
+
+      .list-item {
+        display: flex;
+        cursor: pointer;
+        height: 30px;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        font-family: 'Roboto';
+
+        &:hover {
+          background-color: lightgray;
+        }
+
+        &-active {
+          background-color: lightgray;
+        }
+
+        mat-icon {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  .content {
+    margin-top: 50px;
+    height: calc(100vh - 50px);
+    overflow: scroll;
+  }
+}

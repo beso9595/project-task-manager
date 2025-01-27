@@ -1,0 +1,29 @@
+<div [formGroup]="taskForm" class="task-form">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+            @for (item of taskStatusList; track item) {
+                <mat-option [value]="item">{{item | status}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>User</mat-label>
+        <mat-select formControlName="user_id">
+            @for (item of users; track item.id) {
+                <mat-option [value]="item.id">{{item.full_name}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+    <button mat-flat-button
+            (click)="onSubmit()"
+            color="primary"
+            [disabled]="taskForm.invalid || !taskForm.dirty">Submit</button>
+    @if (isEdit) {
+        <button mat-flat-button (click)="onDelete()" color="warn">Delete</button>
+    }
+</div>
